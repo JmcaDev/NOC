@@ -3,7 +3,7 @@ import fs from "fs"
 import { LogDatasource } from "../../domain/datasources/log.datasource";
 import { LogEntity, LogSeverityLevel } from "../../domain/entities/log.entity";
 
-export class FileSystem implements LogDatasource {
+export class FileSystemDatasource implements LogDatasource {
 
     private readonly logPath = "logs/"
     private readonly allLogsPath = "logs/logs-all.log"
