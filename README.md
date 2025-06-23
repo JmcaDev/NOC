@@ -1,3 +1,15 @@
-#Proyecto NOC
+# Proyecto NOC
 
 Proyecto que se encarga de monitorear servicios
+
+# Dev
+1. Clonar el archivo env.template a .env
+2. Configurar las variable de entorno
+```
+PORT=3000
+
+MAILER_EMAIL=
+MAILER_SECRET_KEY=
+
+PROD=false
+```
