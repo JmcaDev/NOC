@@ -3,8 +3,8 @@ import { envs } from "./config/plugins/envs.plugin"
 
 
 function main(){
-    // Server.start()
-    console.log(envs)
+    Server.start()
+    // console.log(envs)
 }
 
 (async() => {
