@@ -21,11 +21,7 @@ async function main(){
 
     // console.log(newLog)
 
-    const logs = await LogModel.find()
-    console.log(logs[2].message)
-
-
-    // Server.start()
+    Server.start()
 }
 
 (async() => {

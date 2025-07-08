@@ -50,6 +50,8 @@ export class FileSystemDatasource implements LogDatasource {
         const content = fs.readFileSync(path, "utf-8")
         const logs = content.split("\n").map( log => LogEntity.fromJson(log))
 
+        if(content === "") return []
+
         return logs
     }
 
