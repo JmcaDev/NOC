@@ -10,7 +10,8 @@ Proyecto que se encarga de monitorear servicios
     ```
     docker compose up -d
     ```
-5. Ejecutar el comando ```npm run dev```
+5. Ejecutar ```npx prisma migrate dev```
+6. Ejecutar el comando ```npm run dev```
 
 ## Obtener Gmail Key
 [Google AppPasswords] (https://myaccount.google.com/u/0/apppasswords)
