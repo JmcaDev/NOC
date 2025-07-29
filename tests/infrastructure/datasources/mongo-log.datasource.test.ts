@@ -1,8 +1,8 @@
 import mongoose from "mongoose"
-import { envs } from "../../src/config/plugins/envs.plugin"
-import { LogModel, MongoDatabase } from "../../src/data/mongoDB"
-import { MongoLogDatasource } from "../../src/infrastructure/datasources/mongo-log.datasource"
-import { LogEntity, LogSeverityLevel } from "../../src/domain/entities/log.entity"
+import { envs } from "../../../src/config/plugins/envs.plugin"
+import { LogModel, MongoDatabase } from "../../../src/data/mongoDB"
+import { MongoLogDatasource } from "../../../src/infrastructure/datasources/mongo-log.datasource"
+import { LogEntity, LogSeverityLevel } from "../../../src/domain/entities/log.entity"
 
 
 

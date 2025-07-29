@@ -1,11 +1,11 @@
 import fs from "fs"
 import path from "path"
-import { FileSystemDatasource } from "../../src/infrastructure/datasources/file-system.datasource"
-import { LogEntity, LogSeverityLevel } from "../../src/domain/entities/log.entity"
+import { FileSystemDatasource } from "../../../src/infrastructure/datasources/file-system.datasource"
+import { LogEntity, LogSeverityLevel } from "../../../src/domain/entities/log.entity"
 
 describe("file-system.datasource.ts", () => {
 
-    const logPath = path.join(__dirname, "../../logs") 
+    const logPath = path.join(__dirname, "../../../logs") 
 
     beforeEach(() => {
 
@@ -110,6 +110,25 @@ describe("file-system.datasource.ts", () => {
         expect( logsMedium ).toEqual( expect.arrayContaining([ logMedium]))
         expect( logsHigh ).toEqual( expect.arrayContaining([ logHigh]))
 
+    })
+
+    test("Should not throw an error if path exists", () => {
+        new FileSystemDatasource()
+        new FileSystemDatasource()
+
+    })
+
+    test("Should throw an error if severity level is not defined", async () => {
+        const logDatasource =  new FileSystemDatasource()
+        const customSeverityLevel = "SUPER_MEGA_HIGH" as LogSeverityLevel
+
+        try {
+            await logDatasource.getLogs(customSeverityLevel)
+            expect(true).toBeFalsy()
+        } catch (error) {
+            const errorString = `${error}`
+            expect(errorString).toBe("Error: SUPER_MEGA_HIGH not implemented")
+        }
     })
 
 })
